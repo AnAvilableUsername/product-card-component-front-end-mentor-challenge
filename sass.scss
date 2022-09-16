@@ -1,0 +1,141 @@
+$Dark-cyan: hsl(158, 36%, 37%);
+$Cream: hsl(30, 38%, 92%);
+
+$Very-dark-blue: hsl(212, 21%, 14%);
+$Dark-grayish-blue: hsl(228, 12%, 48%);
+$White: hsl(0, 0%, 100%);
+
+$border-radius: 1rem;
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Gantari:wght@200;300;400;500;600;700&family=Montserrat:wght@500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; // 1rem = 10px
+}
+
+body {
+    background-color: $Cream;
+}
+
+.container {
+
+    display: flex;
+
+
+    &__main {
+        margin: 30rem auto;
+        display: flex;
+
+        background-color: $White;
+        border-radius: 0 $border-radius $border-radius 0;
+    }
+}
+
+
+.left-side {
+    min-width: 50%;
+    background-image: url(./images/image-product-desktop.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: $border-radius 0 0 $border-radius;
+}
+
+.right-side {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.9rem;
+    padding: 8rem 4rem;
+
+    &__light {
+        text-transform: uppercase;
+        color: $Dark-grayish-blue;
+        font-size: 1.4rem;
+        letter-spacing: .4rem;
+    }
+
+    &__header {
+        font-size: 4rem;
+
+    }
+
+    &__p {
+        font-size: 1.4rem;
+    }
+
+    &__price {
+        color: $Dark-cyan;
+        font-size: 4rem;
+
+        &::after {
+            content: '$169.99';
+            font-size: 0.5em;
+            position: absolute;
+            margin: 0.6em 0 0 1em;
+            color: $Dark-grayish-blue;
+            text-decoration: line-through;
+        }
+    }
+
+    &__btn {
+        text-decoration: none;
+        font-size: 2rem;
+        text-align: center;
+        background-color: $Dark-cyan;
+        color: $White;
+        transition: 100ms;
+        border-radius: 8px;
+        padding: 2rem 1rem;
+        font-weight: 500;
+
+        &:hover {
+            background-color: darken($Dark-cyan, 20);
+        }
+
+        &--icon {
+            padding-right: 1rem;
+        }
+    }
+}
+
+
+.Fraunces {
+    font-family: Fraunces, sans-serif;
+}
+
+.Montserrat {
+    font-family: Montserrat, sans-serif;
+}
+
+
+
+@media only screen and (min-width:324px) and (max-width:800px) {
+
+
+    .container {
+
+        &__main {
+            flex-direction: column;
+            max-width: 600px;
+            
+        }
+
+    }
+
+    .left-side {
+        width: 100%;
+        height: 50rem;
+        background-image: url(./images/image-product-mobile.jpg);
+
+    }
+
+    .right-side {
+        width: 100%;
+
+    }
+}
