@@ -20,15 +20,14 @@ html {
 
 body {
     background-color: $Cream;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .container {
 
-    display: flex;
-
-
     &__main {
-        margin: 30rem auto;
         display: flex;
 
         background-color: $White;
